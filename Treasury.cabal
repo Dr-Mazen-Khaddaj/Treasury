@@ -1,0 +1,25 @@
+cabal-version:      3.14
+name:               Treasury
+version:            0.1.0.0
+synopsis:           TODO
+-- description:
+homepage:           TODO
+license:            NONE
+author:             Dr. Mazen Khaddaj
+maintainer:         MazenKhaddaj@outlook.com
+-- copyright:
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+common warnings
+    ghc-options: -Wall
+
+executable Treasury
+    import:           warnings
+    main-is:          Main.hs
+    -- other-modules:
+    -- other-extensions:
+    build-depends:    base ^>=4.21.0.0
+    hs-source-dirs:   app
+    default-language: GHC2024

@@ -1,0 +1,5 @@
+# Cabal build artifacts
+dist-newstyle/
+
+# Editor and OS files
+.vscode/
