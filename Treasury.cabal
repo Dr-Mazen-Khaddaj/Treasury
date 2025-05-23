@@ -15,11 +15,31 @@ extra-doc-files:    CHANGELOG.md
 common warnings
     ghc-options: -Wall
 
-executable Treasury
-    import:           warnings
-    main-is:          Main.hs
-    -- other-modules:
-    -- other-extensions:
-    build-depends:    base ^>=4.21.0.0
-    hs-source-dirs:   app
+common language
     default-language: GHC2024
+
+common deps
+    build-depends: base ^>=4.21.0.0
+
+common common
+    import: warnings, language, deps
+
+executable Treasury
+    import:             common
+    main-is:            Main.hs
+    hs-source-dirs:     app
+
+library
+    import:             common
+    hs-source-dirs:     src
+    exposed-modules:    Treasury
+    other-modules:      Treasury.DataTypes
+
+test-suite Treasury-test
+    import:             common
+    type:               exitcode-stdio-1.0
+    main-is:            Spec.hs
+    hs-source-dirs:     test
+    build-depends:      Treasury,
+                        tasty,
+                        tasty-hunit

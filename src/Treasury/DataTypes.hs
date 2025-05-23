@@ -1,0 +1,3 @@
+module Treasury.DataTypes
+    (
+    ) where
